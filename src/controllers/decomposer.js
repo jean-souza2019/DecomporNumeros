@@ -1,4 +1,4 @@
-const Decomposer = require('../models/decomposer');
+const Decomposer = require('../utils/decomposer');
 
 module.exports = {
     calcula: (valor) => {
