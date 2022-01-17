@@ -1,15 +1,20 @@
-const controllerDecomposer = require('./src/controllers/decomposer');
-const readline = require('readline');
+const Decomposer = require('./src/utils/decomposer');
+const Readline = require('readline');
 
-var leitor = readline.createInterface({
+
+var leitor = Readline.createInterface({
     input: process.stdin,
     output: process.stdout
 });
 
+
 leitor.question("Digite um número: \n>", function (entrada) {
-    const resultadoDivisores = controllerDecomposer.calcula(entrada);
+    const calculo = new Decomposer(entrada);
+    var resposta = new Array();
+    resposta = calculo.divisores();
+
     console.log("\nNúmero de Entrada: " + entrada);
-    console.log("\nNúmeros divisores: " + resultadoDivisores.divisores);
-    console.log("\nDivisores Primos: " + resultadoDivisores.primos);
+    console.log("\nNúmeros divisores: " + resposta.divisores);
+    console.log("\nDivisores Primos: " + resposta.primos);
     leitor.close();
 });
