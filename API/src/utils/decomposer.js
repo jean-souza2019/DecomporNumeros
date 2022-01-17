@@ -8,7 +8,6 @@ class Decomposer {
 
     valida() {
         validacoes.entradaInteiro(this.valor);
-
     }
 
     divisorePrimo(value) {

@@ -12,12 +12,15 @@ app.post('/decomposer', (req, res) => {
     const entrada = req.body.number;
     const decomposerDivisores = new Decomposer(entrada);
     const { divisores, primos } = decomposerDivisores.divisores();
-
-    let mensagem = `\nNúmero de Entrada: ${entrada}\n
-     Números divisores: ` + divisores + `\n
-     Divisores Primos: ` + primos;
-
-    res.status(200).send(mensagem);
+    if (divisores.length && primos.length) {
+        let mensagem = `\nNúmero de Entrada: ${entrada}\n
+        Números divisores: ` + divisores + `\n
+        Divisores Primos: ` + primos;
+        res.status(200).send(mensagem);
+    } else {
+        let mensagem = "Preencha somente números inteiros!";
+        res.status(401).send(mensagem);
+    }
 });
 
 module.exports = app;
