@@ -1,4 +1,4 @@
-const validacoes = require('../utils/validations');
+const validacoes = require('./validations');
 
 class Decomposer {
     constructor(entrada) {
@@ -6,14 +6,12 @@ class Decomposer {
         this.valida();
     }
 
-
     valida() {
         validacoes.entradaInteiro(this.valor);
         validacoes.entradaMaiorQueZero(this.valor);
     }
 
-
-    divisoresPrimos(value) {
+    divisorePrimo(value) {
         if (value == 1) {
             return true;
         }
@@ -24,7 +22,6 @@ class Decomposer {
         return value > 1;
     }
 
-
     divisores() {
         let divisores = [];
         let divisoresPrimos = [];
@@ -33,7 +30,7 @@ class Decomposer {
             if ((this.valor % i) === 0) {
                 divisores.push(i);
 
-                if (this.divisoresPrimos(i)) {
+                if (this.divisorePrimo(i)) {
                     divisoresPrimos.push(i);
                 }
             }

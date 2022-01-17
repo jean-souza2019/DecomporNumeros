@@ -7,11 +7,9 @@ var leitor = readline.createInterface({
 });
 
 leitor.question("Digite um número: \n>", function (entrada) {
-    const teste = controllerDecomposer.calcula(entrada);
-
-
+    const resultadoDivisores = controllerDecomposer.calcula(entrada);
     console.log("\nNúmero de Entrada: " + entrada);
-    console.log("\nNúmeros divisores: " + teste.divisores);
-    console.log("\nDivisores Primos: " + teste.primos);
+    console.log("\nNúmeros divisores: " + resultadoDivisores.divisores);
+    console.log("\nDivisores Primos: " + resultadoDivisores.primos);
     leitor.close();
 });
