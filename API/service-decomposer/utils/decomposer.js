@@ -8,7 +8,7 @@ class Decomposer {
 
     valida() {
         validacoes.entradaInteiro(this.valor);
-        validacoes.entradaMaiorQueZero(this.valor);
+
     }
 
     divisorePrimo(value) {
@@ -24,22 +24,19 @@ class Decomposer {
 
     divisores() {
         let divisores = [];
-        let divisoresPrimos = [];
+        let primos = [];
 
         for (let i = 0; i <= this.valor; i++) {
             if ((this.valor % i) === 0) {
                 divisores.push(i);
 
                 if (this.divisorePrimo(i)) {
-                    divisoresPrimos.push(i);
+                    primos.push(i);
                 }
             }
         }
-        
-        return {
-            "divisores": divisores,
-            "primos": divisoresPrimos
-        };
+
+        return { divisores, primos };
     }
 }
 

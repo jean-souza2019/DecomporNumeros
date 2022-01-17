@@ -1,25 +1,47 @@
 {
-  "name": "decompornumeros",
-  "version": "1.0.0",
-  "description": "Decompor numeros",
-  "main": "index.js",
-  "scripts": {
-    "test": "jest"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jean-souza2019/DecomporNumeros.git"
-  },
-  "author": "Jean Marcos",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/jean-souza2019/DecomporNumeros/issues"
-  },
-  "homepage": "https://github.com/jean-souza2019/DecomporNumeros#readme",
-  "dependencies": {
-    "readline": "^1.3.0"
-  },
-  "devDependencies": {
-    "jest": "^27.4.7"
-  }
+    "name": "decompor-numeros",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "@testing-library/jest-dom": "^5.16.1",
+        "@testing-library/react": "^12.1.2",
+        "@testing-library/user-event": "^13.5.0",
+        "axios": "^0.24.0",
+        "bootstrap": "^5.1.3",
+        "react": "^17.0.2",
+        "react-bootstrap": "^2.1.1",
+        "react-dom": "^17.0.2",
+        "react-scripts": "5.0.0",
+        "web-vitals": "^2.1.3"
+    },
+    "scripts": {
+        "front": "npm start",
+        "api": "cd API && nodemon server.js",
+        "start": "react-scripts start",
+        "dev": "concurrently --kill-others-on-fail \"npm run api\" \"npm run front\"",
+        "build": "react-scripts build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject"
+    },
+    "eslintConfig": {
+        "extends": [
+            "react-app",
+            "react-app/jest"
+        ]
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "devDependencies": {
+        "concurrently": "^7.0.0"
+    }
 }

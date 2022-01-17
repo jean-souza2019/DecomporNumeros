@@ -1,4 +1,4 @@
-# 🚀 API Node.JS - Interview
+# 🚀 Solução Node.JS - Interview
 
 Solução desenvolvida em Node para atender os requesitos solicitados no Interview.
 
