@@ -3,12 +3,17 @@ import { React, useState } from 'react';
 import { Button, FormControl } from 'react-bootstrap';
 
 export default function App() {
-  const [valorFinal, setValorFinal] = useState();
-  const [entrada, setEntrada] = useState();
+  const [entrada, setEntrada] = useState(0);
+  const [numeroEntrada, setNumeroEntrada] = useState("");
+  const [numerosDivisores, setNumerosDivisores] = useState("");
+  const [divisoresPrimos, setDivisoresPrimos] = useState("");
 
   const enviarDecomposer = async (event) => {
+    setNumeroEntrada("");
+    setNumerosDivisores("");
+    setDivisoresPrimos("");
     event.preventDefault();
-    if (entrada || entrada > 0) {
+    if (parseInt(entrada.value) > 0) {
       const requestOptions = {
         method: 'POST',
         headers: {
@@ -18,14 +23,16 @@ export default function App() {
       };
       var response = await fetch('http://localhost:5000/decomposer/', requestOptions);
       var data = await response.text();
-      var resultados = data.split("\n")
-      setValorFinal(resultados)
+      setNumeroEntrada(`Número de Entrada: ${JSON.parse(data).numeroEntrada}`);
+      setNumerosDivisores(`Números divisores: ${JSON.parse(data).numerosDivisores.join(', ')}`);
+      setDivisoresPrimos(`Divisores Primos: ${JSON.parse(data).divisoresPrimos.join(', ')}`);
     }
   };
 
   const adicionarEntrada = (event) => {
     event.preventDefault();
-      setEntrada({ value: event.target.value });
+    let value = event.target.value;
+    setEntrada({ value: value });
   }
 
 
@@ -43,8 +50,14 @@ export default function App() {
           <FormControl type="number" onChange={adicionarEntrada} />
           <Button variant="secondary" onClick={enviarDecomposer}>Gerar</Button>
         </p>
-        <p >
-          {valorFinal ? valorFinal : ''}
+        <p>
+          {numeroEntrada}
+        </p>
+        <p>
+          {numerosDivisores}
+        </p>
+        <p>
+          {divisoresPrimos}
         </p>
       </header>
 
