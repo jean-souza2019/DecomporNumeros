@@ -1,7 +1,9 @@
-const divisoresss = require('../decomposer')
+const decomposer = require('../decomposer')
 
-const calculo = new divisoresss(45);
-
-test('contem valor 5', () => {
-  expect(calculo.divisores().divisores).toContain('5')
-})
+describe('Testes unitários decomposer.js ', () => {
+  it('Teste função divisores', () => {
+    const esperado = [1, 3, 5, 9, 15, 45]
+    const calculo = new decomposer(45);
+    expect(calculo.divisores().divisores).toEqual(expect.arrayContaining(esperado));
+  })
+});
