@@ -1,5 +1,3 @@
-const { InvalidArgumentError } = require('./errors');
-
 module.exports = {
     entradaInteiro: (valor) => {
         if (valor <= 0 || Number.isNaN(valor)) {

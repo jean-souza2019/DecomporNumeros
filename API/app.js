@@ -1,4 +1,4 @@
-const Decomposer = require('./service-decomposer/utils/decomposer');
+const Decomposer = require('./src/utils/decomposer');
 const express = require('express');
 const bodyParser = require('body-parser');
 

@@ -9,20 +9,41 @@ export default function App() {
   const enviarDecomposer = async (event) => {
     console.log(entrada)
     event.preventDefault();
-    const requestOptions = {
+    // const requestOptions = {
+    //   mode: 'no-cors',
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //     "Access-Control-Allow-Origin": "http://localhost:5000"
+    //   },
+    //   body: JSON.stringify({ 'number': 45 })
+    // };
+    // const response = await fetch('http://localhost:5000/decomposer', requestOptions);
+    // const data = await response.status;
+    // console.log(data)
+
+
+
+
+    axios({
+
+      method: 'http://localhost:5000/decomposer',
       mode: 'no-cors',
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        "Access-Control-Allow-Origin": "http://localhost:5000",
-        "Access-Control-Allow-Credentials": true
+        "Access-Control-Allow-Origin": "http://localhost:5000"
       },
-      body: JSON.stringify({ number: 45 })
-    };
-    const response = await fetch('http://localhost:5000/decomposer', requestOptions);
-    const data = await response.json();
-    console.log(data)
+      body: JSON.stringify({ 'number': 45 })
+        .then(function (responde) {
+          console.log(response);
+        })
+        .catch(function (error) {
+          console.log(error);
+        })
+    });
   };
+
 
   const adicionarEntrada = (event) => {
     event.preventDefault();
