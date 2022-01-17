@@ -2,7 +2,7 @@
 
 Solução desenvolvida em Node para atender os requesitos solicitados no Interview.
 
-Versão: 1.0 - inputs via terminal 
+Versão: 1.0
 
 ### 📋 Requisitos
 
