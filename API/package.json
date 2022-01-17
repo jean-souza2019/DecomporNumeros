@@ -1,0 +1,29 @@
+{
+    "name": "decompornumeros",
+    "version": "2.0.0",
+    "description": "Decompor numeros",
+    "main": "nodemon server.js",
+    "scripts": {
+        "test": "jest"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jean-souza2019/DecomporNumeros.git"
+    },
+    "author": "Jean Marcos",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/jean-souza2019/DecomporNumeros/issues"
+    },
+    "homepage": "https://github.com/jean-souza2019/DecomporNumeros#readme",
+    "dependencies": {
+        "body-parser": "^1.19.1",
+        "express": "^4.17.2",
+        "nodemon": "^2.0.15",
+        "supertest": "^6.2.1"
+    },
+    "devDependencies": {
+        "cors": "^2.8.5",
+        "jest": "^27.4.7"
+    }
+}
