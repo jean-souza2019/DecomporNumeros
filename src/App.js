@@ -3,27 +3,29 @@ import { React, useState } from 'react';
 import { Button, FormControl } from 'react-bootstrap';
 
 export default function App() {
-  const [retorno, setRetorno] = useState();
+  const [valorFinal, setValorFinal] = useState();
   const [entrada, setEntrada] = useState();
 
   const enviarDecomposer = async (event) => {
     event.preventDefault();
-    const requestOptions = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ number: entrada.value })
-    };
-    var response = await fetch('http://localhost:5000/decomposer/', requestOptions);
-    var data = await response.text();
-    var resultados = data.split("\n")
-    setRetorno(resultados)
+    if (entrada || entrada > 0) {
+      const requestOptions = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ number: entrada.value })
+      };
+      var response = await fetch('http://localhost:5000/decomposer/', requestOptions);
+      var data = await response.text();
+      var resultados = data.split("\n")
+      setValorFinal(resultados)
+    }
   };
 
   const adicionarEntrada = (event) => {
     event.preventDefault();
-    setEntrada({ value: event.target.value });
+      setEntrada({ value: event.target.value });
   }
 
 
@@ -42,7 +44,7 @@ export default function App() {
           <Button variant="secondary" onClick={enviarDecomposer}>Gerar</Button>
         </p>
         <p >
-          {retorno ? retorno : ''}
+          {valorFinal ? valorFinal : ''}
         </p>
       </header>
 

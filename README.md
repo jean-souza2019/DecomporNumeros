@@ -48,11 +48,15 @@ Divisores Primos: 1 3 5
 
 ```
 npm install
+CD API -> npm install
 ```
 
 ## ⚙️ Testes
 
+```
+npm run test
 
+```
 ## ✒️ Autores
 
 * **Jean Marcos de Souza** - *Desenvolvedor* - jiamarcos@outlook.com.br
